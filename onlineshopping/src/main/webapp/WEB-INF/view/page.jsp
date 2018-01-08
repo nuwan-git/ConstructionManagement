@@ -1,80 +1,96 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="contextRoot" value="${pageContext.request.contextPath }"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextRoot" value="${pageContext.request.contextPath }" />
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
 <!-- load static resources -->
-<spring:url var="css" value="/resources/css"/>
-<spring:url var="js" value="/resources/js"/>
-<spring:url var="images" value="/resources/images"/>
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
 
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Online Shopping -${title}</title>
+<title>Online Shopping -${title}</title>
 
-	<script>
-	window.menu='${title}'; /* get title value */
-	</script>
+<script>
+	window.menu = '${title}'; /* get title value */
+</script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="${css}/bootstrap.min.css" rel="stylesheet">
-    
-     <!-- Bootstrap readable theame -->
-    <link href="${css}/boostrapreadabletheame.css" rel="stylesheet">
-   
+<!-- Bootstrap core CSS -->
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="${css}/myapp.css" rel="stylesheet">
+<!-- Bootstrap readable theame -->
+<link href="${css}/boostrapreadabletheame.css" rel="stylesheet">
 
-	
 
-  </head>
+<!-- Custom styles for this template -->
+<link href="${css}/myapp.css" rel="stylesheet">
 
-  <body>
+
+
+</head>
+
+<body>
 
 
 	<!-- 		<div class ="wrapper"> -->
+
+
+	<!-- Navigation bar comes here -->
+	<%@include file="./shared/navibar.jsp"%>
+
+	<!-- Page Content -->
+	<!--    <div class="content"> -->
+
+	<!-- loading the home content -->
+	<c:if test="${userClickHome==true }">
+		<%@include file="./home.jsp"%>
+		<!-- content shuold only load user click home -->
+	</c:if>
 	
-	
-		    <!-- Navigation bar comes here -->
-		   <%@include file="./shared/navibar.jsp" %>
+	<!-- content shuold only load user click about -->
+	<c:if test="${userClickAbout==true }">
+		<%@include file="./about.jsp"%>
 		
-		    <!-- Page Content -->
-		<!--    <div class="content"> -->
-		   
-			    <!-- loading the home content -->
-			    <c:if test="${userClickHome==true }">
-			     <%@include file="./home.jsp" %> <!-- content shuold only load user click home -->
-				</c:if>
-				 <c:if test="${userClickAbout==true }">
-			     <%@include file="./about.jsp" %> <!-- content shuold only load user click about -->
-				</c:if>
-					 <c:if test="${userClickContact==true }">
-			     <%@include file="./contact.jsp" %> <!-- content shuold only load user click contact -->
-				</c:if>
+	</c:if>
+	
+	<!-- content shuold only load user click contact -->
+	
+	<c:if test="${userClickContact==true }">
+		<%@include file="./contact.jsp"%>
+		
+	</c:if>
+	
+	<!-- load only user click allproducts -->
+	<c:if test="${userClickAllProducts==true or userClickCategoryProducts==true  }">
+		<%@include file="./listProducts.jsp"%>
+		
+	</c:if>
+	
 	<!-- 	 </div> -->
 
 	<!-- Footer comes here -->
-		    <%@include file="./shared/footer.jsp" %>
-		
-		   <!-- jquery -->
-		    <script src="${js}/jquery.js"></script>
-		     <!-- Bootstrap core JavaScript -->
-		    <script src="${js}/bootstrap.bundle.min.js"></script>
-			
-			 <!--  self coded java script -->
-		   
-		        <script src="${js}/myapp.js"></script>
-        
-<!--       </div> -->
-  </body>
+	<%@include file="./shared/footer.jsp"%>
+
+	<!-- jquery -->
+	<script src="${js}/jquery.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="${js}/bootstrap.bundle.min.js"></script>
+
+	<!--  self coded java script -->
+
+	<script src="${js}/myapp.js"></script>
+
+	<!--       </div> -->
+</body>
 
 </html>

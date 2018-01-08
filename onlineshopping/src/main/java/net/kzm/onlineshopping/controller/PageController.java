@@ -14,8 +14,29 @@ public class PageController {
 	public ModelAndView index(){
 		System.out.println("page");
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("msg","Welcome To WEb Mvc");
+		mv.addObject("title","Home");
+		mv.addObject("userClickHome",true);
 		System.out.println(mv);
+		return mv;
+		
+	}
+	@RequestMapping (value ={"/about"})
+	public ModelAndView about(){
+	
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","About");
+		mv.addObject("userClickAbout",true);
+		
+		return mv;
+		
+	}
+	@RequestMapping (value ={"/contact"})
+	public ModelAndView contact(){
+		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","Contact");
+		mv.addObject("userClickContact",true);
+		
 		return mv;
 		
 	}

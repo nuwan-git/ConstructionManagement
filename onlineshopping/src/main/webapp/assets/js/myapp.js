@@ -19,7 +19,7 @@ $(function() {
 
 	default:
 		$('#listProducts').addClass('active');
-		$('#a_'+menu).addClass('active');
+		$('#a_').addClass('active');
 		break;
 	}
 

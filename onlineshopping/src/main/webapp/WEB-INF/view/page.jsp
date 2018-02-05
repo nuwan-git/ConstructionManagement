@@ -56,26 +56,27 @@
 		<%@include file="./home.jsp"%>
 		<!-- content shuold only load user click home -->
 	</c:if>
-	
+
 	<!-- content shuold only load user click about -->
 	<c:if test="${userClickAbout==true }">
 		<%@include file="./about.jsp"%>
-		
+
 	</c:if>
-	
+
 	<!-- content shuold only load user click contact -->
-	
+
 	<c:if test="${userClickContact==true }">
 		<%@include file="./contact.jsp"%>
-		
+
 	</c:if>
-	
+
 	<!-- load only user click allproducts -->
-	<c:if test="${userClickAllProducts==true or userClickCategoryProducts==true  }">
+	<c:if
+		test="${userClickAllProducts==true or userClickCategoryProducts==true  }">
 		<%@include file="./listProducts.jsp"%>
-		
+
 	</c:if>
-	
+
 	<!-- 	 </div> -->
 
 	<!-- Footer comes here -->

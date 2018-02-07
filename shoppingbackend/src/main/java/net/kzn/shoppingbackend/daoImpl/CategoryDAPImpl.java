@@ -26,7 +26,7 @@ public class CategoryDAPImpl implements CategoryDAO {
 
 		query.setParameter("active", true);
 		
-		System.out.println(query.getResultList());
+		
 		return query.getResultList();
 	}
 
@@ -43,7 +43,7 @@ public class CategoryDAPImpl implements CategoryDAO {
 	@Override
 	public boolean add(Category category) {
 
-		System.out.println(category.getId());
+		
 		try {
 			// add the category to the database table
 			sessionfactory.getCurrentSession().persist(category);

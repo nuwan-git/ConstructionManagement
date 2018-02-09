@@ -1,26 +1,38 @@
 package net.kzm.onlineshopping.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.kzm.onlineshopping.exception.productNotFoundException;
 import net.kzn.shoppingbackend.dao.CategoryDAO;
+import net.kzn.shoppingbackend.dao.ProductDAO;
 import net.kzn.shoppingbackend.dto.Category;
+import net.kzn.shoppingbackend.dto.Product;
 
 
 @Controller
 public class PageController {
 
+	private static final Logger logger=LoggerFactory.getLogger(PageController.class);
+	
 	@Autowired
 	private CategoryDAO categoryDAO;
+	@Autowired
+	private ProductDAO productDao;
 	
 	@RequestMapping (value ={"/","/home","/index"})
 	public ModelAndView index(){
 		System.out.println("page");
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","Home");
+		
+		logger.info("Inside PageController index method - INFO");
+		logger.info("Inside PageController index method - DEBUG");
 		
 		//passing the of categories
 		mv.addObject("categories",categoryDAO.list());
@@ -55,7 +67,7 @@ public class PageController {
 	 * Methods to all products and based on category
 	 * 
 	 */
-	
+
 	@RequestMapping (value ="/show/all/products")
 	public ModelAndView showAllProducts(){
 		
@@ -95,6 +107,26 @@ public class PageController {
 		
 	}
 	
+	@RequestMapping(value="/show/{id}/product")
+	public ModelAndView showSingleProduct(@PathVariable int id) throws productNotFoundException{
+		
+		ModelAndView mv = new ModelAndView("page");
+		
+		Product product = productDao.get(id);
+		
+		if(product==null) throw new  productNotFoundException();
+		
+		//update the view count
+		product.setViews(product.getViews()+1);
+		productDao.update(product);
+		
+		mv.addObject("title",product.getName());
+		mv.addObject("product",product);
+		
+		mv.addObject("userClickShowProduct",true);
+		return mv;
+		
+	}
 	
 //	@RequestMapping (value="/test")
 //	public ModelAndView test(@RequestParam(value="greeting",required=false) String greeting_ ){

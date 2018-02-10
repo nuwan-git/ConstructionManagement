@@ -129,6 +129,11 @@ public class PageController {
 	}
 	
 //	@RequestMapping (value="/test")
+	
+	/*test/greeting?22
+	 * 
+	 * greeting_ = 22
+	 */
 //	public ModelAndView test(@RequestParam(value="greeting",required=false) String greeting_ ){
 //		if(greeting_==null){
 //			greeting_="Hello there";

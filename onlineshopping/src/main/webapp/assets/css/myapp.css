@@ -20,6 +20,10 @@ body {
 	height:100px;
 }
 
+.help-block{
+	color: #ff0000;
+}
+
 /* .wrapper {
 	min-height: 100;
 	position: relative;

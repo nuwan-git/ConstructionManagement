@@ -6,6 +6,7 @@
 <!-- load static resources -->
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
+<spring:url var="fonts" value="/resources/fonts" />
 <spring:url var="images" value="/resources/images" />
 
 <!DOCTYPE html>
@@ -86,6 +87,13 @@
 	<c:if
 		test="${userClickShowProduct==true}">
 		<%@include file="./sigleProduct.jsp"%>
+
+	</c:if>
+	
+	<!-- load only user click manageProduct -->
+	<c:if
+		test="${userClickManageProduct==true}">
+		<%@include file="./ManageProduct.jsp"%>
 
 	</c:if>
 

@@ -3,7 +3,7 @@
 
 		<h1>About Us</h1>
 		<hr />
-		<p>this is my about page</p>
+		<p>this is my about </p>
 	</div>
 
 

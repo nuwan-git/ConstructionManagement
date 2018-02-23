@@ -26,6 +26,10 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- for file uploading id must be multipart -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+	
+	
 	<!-- loading static resources -->
 	
 	<mvc:annotation-driven/>

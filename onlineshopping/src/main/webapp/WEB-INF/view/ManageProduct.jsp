@@ -5,15 +5,15 @@
 	<div class="row">
 
 		<c:if test="${not empty message}">
-		
+
 			<div class="col-md-12">
-			
+
 				<div class="alert alert-success alert-dismissible">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
 					${message}
 				</div>
 			</div>
-			
+
 		</c:if>
 		<div class=" col-md-8 mx-auto">
 
@@ -26,7 +26,7 @@
 
 					<sf:form class="form" role="form" autocomplete="off"
 						modelAttribute="product" action="${contextRoot}/manage/products"
-						method="POST">
+						method="POST" enctype="multipart/form-data">
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Enter
@@ -34,8 +34,8 @@
 							<div class="col-lg-9">
 								<sf:input type="text" class="form-control" id="name" path="name"
 									placeholder="Product Name"></sf:input>
-								<sf:errors path="name" cssClass="help-block" element="em"/>
-								
+								<sf:errors path="name" cssClass="help-block" />
+
 							</div>
 						</div>
 						<div class="form-group row">
@@ -44,8 +44,8 @@
 							<div class="col-lg-9">
 								<sf:input type="text" class="form-control" id="brand"
 									path="brand" placeholder="Brand Name"></sf:input>
-									<sf:errors path="brand" cssClass="help-block" element="em"/>
-								
+								<sf:errors path="brand" cssClass="help-block" element="em" />
+
 							</div>
 						</div>
 						<div class="form-group row">
@@ -54,8 +54,8 @@
 							<div class="col-lg-9">
 								<sf:input type="number" class="form-control" id="unitprice"
 									path="unitprice" placeholder="Unit Price"></sf:input>
-									<sf:errors path="unitprice" cssClass="help-block" element="em"/>
-								
+								<sf:errors path="unitprice" cssClass="help-block" element="em" />
+
 							</div>
 						</div>
 
@@ -65,8 +65,8 @@
 							<div class="col-lg-9">
 								<sf:textarea class="form-control" id="description"
 									path="description" placeholder="Unit Price"></sf:textarea>
-								<sf:errors path="description" cssClass="help-block" element="em"/>
-								
+								<sf:errors path="description" cssClass="help-block" element="em" />
+
 							</div>
 						</div>
 
@@ -77,6 +77,15 @@
 								<sf:input type="number" class="form-control" id="quantity"
 									path="quantity" placeholder="Quantity Availble"></sf:input>
 
+							</div>
+						</div>
+						<!-- file element for image file upload -->
+						<div class="form-group row">
+							<label class="col-lg-3 col-form-label form-control-label" for="file">Select an Image: </label>
+							<div class="col-lg-9">
+								<sf:input type="file" class="form-control" id="file"
+									path="file" ></sf:input>
+								<sf:errors path="file" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 
@@ -115,14 +124,6 @@
 					<p class="mb-0"></p>
 				</div>
 			</div>
-
-
-
 		</div>
-
-
 	</div>
-
-
-
 </div>

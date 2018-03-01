@@ -1,4 +1,4 @@
-<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
 
@@ -81,11 +81,11 @@
 						</div>
 						<!-- file element for image file upload -->
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label" for="file">Select an Image: </label>
+							<label class="col-lg-3 col-form-label form-control-label"
+								for="file">Select an Image: </label>
 							<div class="col-lg-9">
-								<sf:input type="file" class="form-control" id="file"
-									path="file" ></sf:input>
-								<sf:errors path="file" cssClass="help-block" element="em"/>
+								<sf:input type="file" class="form-control" id="file" path="file"></sf:input>
+								<sf:errors path="file" cssClass="help-block" element="em" />
 							</div>
 						</div>
 
@@ -101,12 +101,23 @@
 								</sf:select>
 							</div>
 						</div>
+						<c:if test="${product.id ==0 }">
+						<div class="text-left">
+							<div class="text-right">
+								
+									<button type="button" data-toggle="modal" data-target="#myCategoryModel" class=	"btn btn-warning btn-sm float-right">Add Category</button>			
+									
+			
+							</div>
+							</div>
+							<br/>
+						</c:if>
 
-
-						<div class="form-group">
+						<div class="form-group row">
+							<div class="btnMove">
 							<input type="Submit" value="Submit"
-								class="btn btn-success btn-lg float-right" />
-
+								class="btn btn-success btn-sm float-left" />
+							</div>
 							<!-- Hidden fields of Product -->
 							<sf:hidden path="id" />
 							<sf:hidden path="code" />
@@ -126,4 +137,163 @@
 			</div>
 		</div>
 	</div>
+	<br/>
+	<div class="row">
+		
+
+		<div class="col-md-8 mx-auto">
+
+			<!-- products table for admin -->
+			<table id="adminProductsTable"
+				class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>&#160</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Quantity</th>
+						<th>Unit Price</th>
+						<th>Active</th>
+						<th>Edit</th>
+
+					</tr>
+
+				</thead>
+				<%-- <tbody>
+					<tr>
+						<td>4</td>
+						<td><img class="adminDataTableImg"
+							src="${contextRoot}/resources/images/PRDMNO123PQRX.jpg"
+							alt="mackbook pro" /></td>
+						<td>Mackbook Pro</td>
+						<td>Apple</td>
+						
+						<td>3</td>
+						<td>&#8377; 54000.00/-</td>
+						<td>
+							<!-- toggle switch -->
+							 <label class="switch"> 
+								 <input type="checkbox" checked="checked" value="4" />
+									
+									<div class="slider"></div>
+							</label>
+						</td>
+						<td>
+							<a href="${contextRoot}/manage/4/product" class="btn btn-warning"> 
+								
+								<span class="glyphicon glyphicon-pencil"> 
+									
+								</span>
+							</a>
+						</td>
+
+					</tr>
+					
+					
+					<tr>
+						<td>4</td>
+						<td><img class="adminDataTableImg"
+							src="${contextRoot}/resources/images/PRDMNO123PQRX.jpg"
+							alt="mackbook pro" /></td>
+						<td>Mackbook Pro</td>
+
+						<td>3</td>
+						<td>&#8377; 54000.00/-</td>
+						<td>
+							<!-- toggle switch -->
+							 <label class="switch"> 
+								 <input type="checkbox" value="4" />
+									
+									<div class="slider"></div>
+							</label>
+						</td>
+						<td>
+							<a href="${contextRoot}/manage/4/product" class="btn btn-warning"> 
+								
+								<span class="glyphicon glyphicon-pencil"> 
+									
+								</span>
+							</a>
+						</td>
+
+					</tr>
+
+				</tbody> --%>
+				<tfoot>
+					<tr>
+						<th>Id</th>
+						<th>&#160; </th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Quantity</th>
+						<th>Unit Price</th>
+						<th>Active</th>
+						<th>Edit</th>
+
+					</tr>
+
+				</tfoot>
+
+
+
+			</table>
+
+		</div>
+
+
+	</div>
+
+	<div class="row">
+		<div class ="modal fade" id="myCategoryModel" role="dialog" tabindex="-1">
+			
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				<!-- Modal Dialog -->
+					<div class="modal-header">
+					
+						<button type="button" class="close" data-dismiss="modal">
+							<span>&times;</span>
+						
+						</button>
+						<h4 class="modal-title ">Add New Category</h4>
+					</div>
+					<div class="modal-body">
+					<!-- 	category form -->
+					
+					<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category" method="POST" class="form-horizontal">
+						<div class="form-group">
+							<label for="category_name" class="control-label col-md-4">Category Name</label>
+								<div class="col-md-8">
+									
+									<sf:input type="text" path="name" id="category_name" class="form-control"/>
+								</div>
+						</div>
+								
+								<div class="form-group">
+							<label for="category_description" class="control-label col-md-4">Category Description</label>
+								<div class="col-md-8">
+									
+									<sf:textarea cols=" " rows="5" path="description" id="category_description" class="form-control"/>
+								</div>
+								</div>
+								
+								<div class="form-group">
+								<div class="col-md-offset-4 col-md-8">
+										<input type="Submit" value="Add Category" class="btn btn-primary"/>
+								</div>
+								</div>
+					
+					</sf:form>
+					
+					</div>
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	
+	</div>
+
 </div>

@@ -112,6 +112,16 @@
 	
 	<!-- DataTableBoostrap -->
 	<script src="${js}/dataTables.bootstrap4.js"></script>
+	
+	<!-- BootBox.min.js -->
+	<script src="${js}/bootbox.min.js"></script>
+	
+	<!-- jquery validate -->
+	<script src="${js}/jquery.validate.js"></script>
+	
+	<!-- jqueryvalidate.min.js -->
+	<script src="${js}/jquery.validate.min.js"></script>
+	
 
 	<!--  self coded java script -->
 

@@ -38,6 +38,9 @@
 <!-- Bootstrap DataTable-->
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
+<!-- font awesome -->
+<link href="${css}/font-awesome.min.css" rel="stylesheet">
+
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
 

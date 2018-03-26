@@ -251,12 +251,12 @@
 				<div class="modal-content">
 				<!-- Modal Dialog -->
 					<div class="modal-header">
-					
+					<h4 class="modal-title ">Add New Category</h4>
 						<button type="button" class="close" data-dismiss="modal">
 							<span>&times;</span>
 						
 						</button>
-						<h4 class="modal-title ">Add New Category</h4>
+						
 					</div>
 					<div class="modal-body">
 					<!-- 	category form -->

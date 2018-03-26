@@ -9,7 +9,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
+			<ul class="nav navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
 					href="${contextRoot }/home">Home <span class="sr-only">(current)</span>
 				</a></li>
@@ -28,6 +28,14 @@
 				<li id="manageProduct" class="nav-item"><a class="nav-link"
 					href="${contextRoot}/manage/products">Manage Product</a></li>
 			
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+					<li id="register" class="pull-right">
+						<a href="${contextRoot}/register">Sign Up</a>
+					</li>
+					<li id="login" class="pull-right">
+						<a href="${contextRoot}/login">Login</a>
+					</li>
 			</ul>
 		</div>
 	</div>

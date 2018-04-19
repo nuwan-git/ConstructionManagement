@@ -20,7 +20,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Online Shopping -${title}</title>
+<title>Construction Management -${title}</title>
 
 <script>
 	window.menu = '${title}'; /* get title value */

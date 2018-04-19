@@ -26,7 +26,7 @@
 						<ol class="breadcrumb">
 
 							<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
-							<li class="breadcrumb-item active">All Products</li>
+							<li class="breadcrumb-item active">All Projects</li>
 
 
 						</ol>
@@ -41,7 +41,7 @@
 						<ol class="breadcrumb">
 
 							<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
-							<li class="breadcrumb-item active">Category</li>
+							<li class="breadcrumb-item active">Collaborator</li>
 							<li class="breadcrumb-item active">${category.name}</li>
 
 
@@ -62,10 +62,10 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Price</th>
-								<th>Qty. Available</th>
+								<th>Project Name</th>
+								<th>Location</th>
+								<th>Budget</th>
+								<th>Human Resource</th>
 								<th></th>
 							</tr>
 						
@@ -74,10 +74,12 @@
 						<tfoot>
 							<tr>
 								
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Price</th>
-								<th>Qty. Available</th>
+								<th></th>
+								<th>Project Name</th>
+								<th>Location</th>
+								<th>Budget</th>
+								<th>Human Resource</th>
+								<th></th>
 							</tr>
 						
 						</tfoot>

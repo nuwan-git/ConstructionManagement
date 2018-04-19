@@ -55,10 +55,10 @@ public class ManagementController {
 		
 		if(operation!=null){
 			if(operation.equals("product")){
-				mv.addObject("message","Product Submitted Successfully!!");
+				mv.addObject("message","Project Submitted Successfully!!");
 			}
 			else if(operation.equals("category")){
-				mv.addObject("message","Category submission Successfully");
+				mv.addObject("message","Collaborate  Submission Successfully");
 			}
 		}
 		

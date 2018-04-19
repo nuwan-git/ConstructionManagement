@@ -24,15 +24,15 @@ public class Product {
 	private int id;
 	private String code;
 	
-	@NotBlank(message="Please enter the Product Name")
+	@NotBlank(message="Please enter the Project Name")
 	private String name;
-	@NotBlank(message="Please enter the Brand Name")
+	@NotBlank(message="Please enter the Location")
 	private String brand;
 	@JsonIgnore
-	@NotBlank(message="Please enter the description for Product")
+	@NotBlank(message="Please enter the description for Project")
 	private String description;
 	@Column(name="unit_price")
-	@Min(value=1,message="The Price Cannot Be Less Than One")
+	@Min(value=1,message="The Budget Cannot Be Less Than One")
 	private double unitprice;
 	private int quantity;
 	@Column(name="is_active")

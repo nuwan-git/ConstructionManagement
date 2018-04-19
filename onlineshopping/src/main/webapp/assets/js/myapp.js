@@ -270,13 +270,13 @@ $(function() {
 							
 							var checkbox = $(this);
 							var checked = checkbox.prop('checked');
-							var dMsg = (checked)? 'You want to activate product?' :
-													'You want to deactivate the product?';
+							var dMsg = (checked)? 'You want to activate project?' :
+													'You want to deactivate the project?';
 							var value = checkbox.prop('value');
 							
 							bootbox.confirm({
 								size : 'medium',
-								title : 'Product Activate & Deactivate',
+								title : 'Project Activate & Deactivate',
 								message: dMsg,
 								callback: function(confirmed){
 									if(confirmed){
@@ -333,12 +333,12 @@ $(function() {
 			messages : {
 				
 				name : {
-					required: 'Please add the category name!',
-					minlength: 'The category name should not me less than 2!!'
+					required: 'Please add the collaborator name!',
+					minlength: 'The collaborator name should not me less than 2!!'
 				},
 				description : {
 					
-					required : 'Please add the description for this category'
+					required : 'Please add the description for this collaborator'
 				}
 				
 				

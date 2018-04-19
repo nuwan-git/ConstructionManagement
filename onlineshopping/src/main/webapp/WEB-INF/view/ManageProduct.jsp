@@ -19,7 +19,7 @@
 
 			<div class="card text-center">
 				<div class="card-header success-color white-text">
-					<h4>Product Management</h4>
+					<h4>Project Management</h4>
 				</div>
 				<div class="card-body">
 
@@ -30,59 +30,59 @@
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Enter
-								Product Name</label>
+								Project Name</label>
 							<div class="col-lg-9">
 								<sf:input type="text" class="form-control" id="name" path="name"
-									placeholder="Product Name"></sf:input>
+									placeholder="Project Name"></sf:input>
 								<sf:errors path="name" cssClass="help-block" />
 
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Enter
-								Brand Name</label>
+							<label class="col-lg-3 col-form-label form-control-label">Enter 
+								Location</label>
 							<div class="col-lg-9">
 								<sf:input type="text" class="form-control" id="brand"
-									path="brand" placeholder="Brand Name"></sf:input>
+									path="brand" placeholder="Project Location"></sf:input>
 								<sf:errors path="brand" cssClass="help-block" element="em" />
 
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Enter
-								Unit Price</label>
+								Budget</label>
 							<div class="col-lg-9">
 								<sf:input type="number" class="form-control" id="unitprice"
-									path="unitprice" placeholder="Unit Price"></sf:input>
+									path="unitprice" placeholder="Budget Allocation"></sf:input>
 								<sf:errors path="unitprice" cssClass="help-block" element="em" />
 
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Product
+							<label class="col-lg-3 col-form-label form-control-label">Project
 								Description</label>
 							<div class="col-lg-9">
 								<sf:textarea class="form-control" id="description"
-									path="description" placeholder="Unit Price"></sf:textarea>
+									path="description" placeholder="Description"></sf:textarea>
 								<sf:errors path="description" cssClass="help-block" element="em" />
 
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Quantity
-								Available</label>
+							<label class="col-lg-3 col-form-label form-control-label">
+								Available Human Resources</label>
 							<div class="col-lg-9">
 								<sf:input type="number" class="form-control" id="quantity"
-									path="quantity" placeholder="Quantity Availble"></sf:input>
+									path="quantity" placeholder="Amount Of Human Resource "></sf:input>
 
 							</div>
 						</div>
 						<!-- file element for image file upload -->
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label"
-								for="file">Select an Image: </label>
+								for="file">Select A Location Image: </label>
 							<div class="col-lg-9">
 								<sf:input type="file" class="form-control" id="file" path="file"></sf:input>
 								<sf:errors path="file" cssClass="help-block" element="em" />
@@ -91,7 +91,7 @@
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Select
-								Category</label>
+								Collaborator</label>
 							<div class="col-lg-9">
 								<sf:select class="form-control" id="categoryId"
 									path="categoryId" items="${categories}" itemLabel="name"
@@ -105,7 +105,7 @@
 						<div class="text-left">
 							<div class="text-right">
 								
-									<button type="button" data-toggle="modal" data-target="#myCategoryModel" class=	"btn btn-warning btn-sm float-right">Add Category</button>			
+									<button type="button" data-toggle="modal" data-target="#myCategoryModel" class=	"btn btn-warning btn-sm float-right">Add Collaborator</button>			
 									
 			
 							</div>
@@ -150,10 +150,10 @@
 					<tr>
 						<th>Id</th>
 						<th>&#160</th>
-						<th>Name</th>
-						<th>Brand</th>
-						<th>Quantity</th>
-						<th>Unit Price</th>
+						<th>Project Name</th>
+						<th>Location</th>
+						<th>Human Resources</th>
+						<th>Budget</th>
 						<th>Active</th>
 						<th>Edit</th>
 
@@ -223,11 +223,11 @@
 				<tfoot>
 					<tr>
 						<th>Id</th>
-						<th>&#160; </th>
-						<th>Name</th>
-						<th>Brand</th>
-						<th>Quantity</th>
-						<th>Unit Price</th>
+						<th>&#160</th>
+						<th>Project Name</th>
+						<th>Location</th>
+						<th>Human Resources</th>
+						<th>Budget</th>
 						<th>Active</th>
 						<th>Edit</th>
 
@@ -251,7 +251,7 @@
 				<div class="modal-content">
 				<!-- Modal Dialog -->
 					<div class="modal-header">
-					<h4 class="modal-title ">Add New Category</h4>
+					<h4 class="modal-title ">Add New Collaborator</h4>
 						<button type="button" class="close" data-dismiss="modal">
 							<span>&times;</span>
 						
@@ -263,7 +263,7 @@
 					
 					<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category" method="POST" class="form-horizontal">
 						<div class="form-group">
-							<label for="category_name" class="control-label col-md-4">Category Name</label>
+							<label for="category_name" class="control-label col-md-4">Collaborator Name</label>
 								<div class="col-md-8">
 									
 									<sf:input type="text" path="name" id="category_name" class="form-control"/>
@@ -271,7 +271,7 @@
 						</div>
 								
 								<div class="form-group">
-							<label for="category_description" class="control-label col-md-4">Category Description</label>
+							<label for="category_description" class="control-label col-md-4">Comment</label>
 								<div class="col-md-8">
 									
 									<sf:textarea cols=" " rows="5" path="description" id="category_description" class="form-control"/>
@@ -280,7 +280,7 @@
 								
 								<div class="form-group">
 								<div class="col-md-offset-4 col-md-8">
-										<input type="Submit" value="Add Category" class="btn btn-primary"/>
+										<input type="Submit" value="Add Collaborator" class="btn btn-primary"/>
 								</div>
 								</div>
 					

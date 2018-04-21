@@ -37,7 +37,7 @@
 			<p>${product.description}</p>
 
 			<h4>
-				Price: <strong>&#8377; ${product.unitprice } /-</strong>
+				Budget: <strong>Rs ${product.unitprice } </strong>
 			</h4>
 			<hr />
 
@@ -48,17 +48,17 @@
 				<c:when test="${product.quantity <1}">
 
 					<h6>
-						Qty Availble: <span class="text-danger">Out of Stock</span>
+						Human Resource Availble: <span class="text-danger">No Resources</span>
 					</h6>
 
 				</c:when>
 				<c:otherwise>
-					<h6>Qty. Availble: ${product.quantity}</h6>
+					<h6>Human Resource Availble: ${product.quantity}</h6>
 				</c:otherwise>
 			</c:choose>
 
-			<c:choose>
-
+		<%-- 	<c:choose>
+ 
 				<c:when test="${product.quantity <1}">
 
 				
@@ -78,7 +78,7 @@
 
 
 				</c:otherwise>
-			</c:choose>
+			</c:choose>  --%>
 
 			<a href="${contextRoot}/show/all/products" class="btn btn-primary">
 				Back</a>
